@@ -1,0 +1,90 @@
+{% extends 'face_rec/main.html' %}
+{% block content %}
+<head>
+<script>
+  window.onload = function () 
+  {
+
+  var Total= {{total_students}} ;
+
+  var Present= {{total_students_present}} ;
+  var Absent=Total-Present;
+
+  Present=(Present/Total)*100;
+  Absent=100-Present;
+
+    var chart = new CanvasJS.Chart("chartContainer", {
+    theme: "light2",
+    animationEnabled: true,
+    title:{
+      text: "SOUTH INDIAN EDUCATION SOCIETY"
+    },
+    subtitles: [{
+      text: "BSCIT 3RD YEAR, 2019-20 as on {{date}} {{time}}",
+      fontSize: 20
+    }],
+    legend:{
+      cursor: "pointer",
+      itemclick: explodePie
+    },
+    data: [{
+      type: "pie",
+      showInLegend: true,
+      indexLabelFontSize: 18,
+      radius: 480,
+      toolTipContent: "{name}: <strong>{y}%</strong>",
+      indexLabel: "{name} - {y}%",
+      dataPoints: [
+        { y: Present, name: "Students Absent", exploded: true , color:"red"},
+        { y: Absent, name: "Students Present"},
+      ]
+    }]
+  });
+chart.render();
+}
+function explodePie(e) {
+  for(var i = 0; i < e.dataSeries.dataPoints.length; i++) {
+    if(i !== e.dataPointIndex)
+      e.dataSeries.dataPoints[i].exploded = false;
+  }
+}
+</script>
+</head>
+<body>
+<input type="button" onclick="printDiv('printableArea')" value="Print" style="margin-left:1250px;margin-top:40px"/>
+
+<div id="chartContainer" style="height: 370px; max-width: 920px; margin: 0px auto;"></div>
+<div class="row">
+    <div class="col-md">
+        <div class="card card-body">
+            <table class="table table-sm">
+                <tr>
+                    <th>Student Id</th>
+                    <th>Student Name</th>
+                    <th>Phone</th>
+                    <th>E-mail</th>
+                    <th>Attendance</th>
+                </tr>
+                {% for students in student %}
+                    <tr>
+                        <td>{{students.student_id}}</td>
+                        <td>{{students.name}}</td>
+                        <td>{{students.phone}}</td>
+                        <td>{{students.email}}</td>
+                        <td>{{students.attendance}}</td>
+                    </tr>
+                {% endfor %}
+            </table>
+        </div>
+    </div>
+</div>
+
+<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+<script type="text/javascript">
+function printDiv(divName) 
+{
+     window.print();
+}
+</script>
+</body>
+{% endblock %}

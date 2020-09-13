@@ -1,0 +1,56 @@
+{% extends 'face_rec/main.html' %}
+{% block content %}
+<body>
+	<div class="container">
+        <form class="form-signin" action="/create_dataset" method="post" >{% csrf_token %}
+            <h4 class="text-center">Using Haar Cascades to Capture GreyScale Frontal Face Images</h4>
+            <button class="btn btn-lg btn-primary btn-block" type="button" data-toggle="modal" data-target="#myModal">Create Dataset</button>
+            <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                            <h4 class="modal-title" id="myModalLabel">Input unique id and wait for webcam</h4>
+                        </div>
+                        <div class="modal-body">
+                            <ul>
+                                <li>For higher accuracy, make sure to stay in room with good lightning.</li>
+                                <li>Please remove any type of accesories from face.</li>
+                                <li>Make sure your face in clearly visible in camera.</li>
+                                <li>Make sure your hair is not blocking the face.</li>
+                                <li>Make sure no other faces are within the cam frame.</li>
+                            </ul>
+                            <hr/>
+                            <form action="#" method="POST">
+                                {% csrf_token %}
+                                <div class="form-group">
+                                    <label for="inputId">Enter Unique ID*</label>
+                                    <input type="text" class="form-control" name="userId" id="inputId" placeholder="Enter Id">
+                                </div>
+                                <div class="form-group">
+                                    <label for="inputId1">Enter Unique Name*</label>
+                                    <input type="text" class="form-control" name="userId1" id="inputId" placeholder="Enter Name">
+                                </div>
+                                <button type="submit" class="btn btn-warning">Submit</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+        <br><hr>
+
+        <form class="form-signin" action="/trainer" method="post">{% csrf_token %}
+            <h4 class="text-center">Using LBPH Classifier to Train Model</h4>
+            <button class="btn btn-lg btn-primary btn-block" type="submit">Train The Classifier</button>
+        </form><br><hr>
+         <form class="form-signin" action="/detect" method="post">{% csrf_token %}       
+            <h4 class="text-center">Recognizing Faces Using LBPH Recognizer</h4>
+            <button class="btn btn-lg btn-primary btn-block" type="submit">Detect By Camera</button>
+            {% for message in messages %}
+                <p class="message">{{message}}</p>
+            {% endfor %}
+        </form>
+    </div>
+</body>
+{% endblock %}

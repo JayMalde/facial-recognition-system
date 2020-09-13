@@ -1,0 +1,38 @@
+{% extends 'face_rec/main.html' %}
+{% block content %}
+<div class="container">
+	<div class="row">
+	  	<div class="col-md-6">
+	      	<form method="post" action="/send" id="#"  enctype="multipart/form-data">
+	      		{% csrf_token %}
+              	<div class="form-group files">
+                	<label>Select Your File </label>
+                	<input type="file" class="form-control" name="file" multiple required accept=".doc,.docx,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document">
+              	</div>
+				<div class="form-group row">
+				    <label for="staticEmail" class="col-sm-6 col-form-label">Receivers E-mail Address</label>
+				    <div class="col-sm-10">
+				      	<input type="text" name="email" class="form-control" placeholder="email@example.com">
+				    </div>
+				</div>	
+				<div class="form-group row">
+				    <label for="inputPassword" class="col-sm-4 col-form-label">Title For Mail</label>
+				    <div class="col-sm-10">
+				      	<input type="text" name="title" class="form-control" placeholder="Password">
+				   	</div>
+				</div>
+				<div class="form-group row">
+				    <label for="inputPassword" class="col-sm-4 col-form-label">Subject</label>
+				    <div class="col-sm-10">
+				      	<input type="text" name="subject" class="form-control" placeholder="Password">
+				    </div>
+				</div>
+				<button type="submit" class="btn btn-primary mb-2">Send Mail</button>
+				{% for message in messages %}
+					<p class="messages">{{message}}</p>
+				{% endfor %}
+          	</form>
+	  	</div>
+	</div>
+</div>
+{% endblock %}

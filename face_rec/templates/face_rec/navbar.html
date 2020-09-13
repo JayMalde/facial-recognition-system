@@ -1,0 +1,39 @@
+{% load static %}
+<style type="text/css">
+  .hello-msg
+  {
+    font-size:18px;
+    color:#fff;
+    margin-right:20px;
+  }
+</style>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  	<a class="navbar-brand" href="#" id="logo">Jay's</a>
+  	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    	<span class="navbar-toggler-icon"></span>
+  	</button>
+  	<div class="collapse navbar-collapse" id="navbarNav">
+    	<ul class="navbar-nav">
+      		<li class="nav-item">
+        		<a class="nav-link" href="{% url 'home' %}">Main Page</a>
+      		</li>
+      		<li class="nav-item">
+        		<a class="nav-link" href="{% url 'all_students' %}">All Students</a>
+      		</li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'absent_students' %}">Absent Students</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'report' %}">Report</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'send_file' %}">Send File</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'about' %}">About</a>
+          </li>
+    	</ul>
+  	</div>
+  <span class="hello-msg">Hello, {{request.user}}</span>
+  <span><a class="hello-msg" href="{% url 'logout' %}">  Logout</a></span>
+</nav>

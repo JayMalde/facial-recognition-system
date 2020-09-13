@@ -1,0 +1,101 @@
+<!-- {% load static %} -->
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Main Page</title>
+	<meta charset="UTF-8">
+	<style>
+		.messages{
+			background-color:#ff0020;
+			color: #fff;
+			padding: 10px;
+			margin-top: 10px;
+			border-radius:40px;
+			text-align:center;
+		}
+		#success
+		{
+			background-color:green;
+		}
+		#logo
+		{
+			color:#fddc5c;
+		}
+		body
+		{
+			background-color: #ebeff5;
+		}
+		#total-students
+		{
+			background-color: #4cb4c7;
+		}
+		#present-students
+		{
+			background-color: #efc5b5;
+		}
+		#absent-students
+		{
+			background-color: #7CD1C0;
+		}
+		.files input {
+		    outline: 2px dashed #92b0b3;
+		    outline-offset: -10px;
+		    -webkit-transition: outline-offset .15s ease-in-out, background-color .15s linear;
+		    transition: outline-offset .15s ease-in-out, background-color .15s linear;
+		    padding: 120px 0px 85px 35%;
+		    text-align: center !important;
+		    margin: 0;
+		    height:250px;
+		    width: 100% !important;
+		}
+		.files input:focus{     outline: 2px dashed #92b0b3;  outline-offset: -10px;
+		    -webkit-transition: outline-offset .15s ease-in-out, background-color .15s linear;
+		    transition: outline-offset .15s ease-in-out, background-color .15s linear; border:1px solid #92b0b3;
+		 }
+		.files{ position:relative}
+		.files:after {  pointer-events: none;
+		    position: absolute;
+		    top: 60px;
+		    left: 0;
+		    width: 50px;
+		    right: 0;
+		    height: 56px;
+		    content: "";
+		    background-image: url(https://image.flaticon.com/icons/png/128/109/109612.png);
+		    display: block;
+		    margin: 0 auto;
+		    background-size: 100%;
+		    background-repeat: no-repeat;
+		}
+		.color input{ background-color:#f1f1f1;}
+		.files:before {
+		    position: absolute;
+		    bottom: 10px;
+		    left: 0;  pointer-events: none;
+		    width: 100%;
+		    right: 0;
+		    height: 57px;
+		    content: " or drag it here. ";
+		    display: block;
+		    margin: 0 auto;
+		    color: #2ea591;
+		    font-weight: 600;
+		    text-transform: capitalize;
+		    text-align: center;
+		}
+	</style>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
+<body>
+	{% include 'face_rec/navbar.html' %}
+	<hr>
+	{% block content %}
+	{% endblock %}
+    <hr>
+    {% include 'face_rec/footer.html' %}
+</body>
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+</html>

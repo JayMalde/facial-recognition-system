@@ -1,0 +1,152 @@
+{% extends 'face_rec/main.html' %}
+{% block content %}
+<div class="container">
+    <div class="row my-2">
+        <div class="col-lg-8 order-lg-2">
+            <ul class="nav nav-tabs">
+                <li class="nav-item">
+                    <a href="" data-target="#profile" data-toggle="tab" class="nav-link active">Profile</a>
+                </li>
+                <li class="nav-item">
+                    <a href="" data-target="#attendance" data-toggle="tab" class="nav-link">Attendance</a>
+                </li>
+                <li class="nav-item">
+                    <a href="" data-target="#edit" data-toggle="tab" class="nav-link">Edit</a>
+                </li>
+            </ul>
+            <div class="tab-content py-4">
+                <div class="tab-pane active" id="profile">
+                    <h4 class="mb-3">Student Profile</h4>
+                    {% for students in student %}
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h5>Student Name</h6>
+                            <h6>
+                            <p>
+                                {{students.name}}
+                            </p>
+                            </h6>
+                            <h5>About</h5>
+                            <p>
+                                {{students.description}}
+                            </p>
+                            <h5>E-mail</h5>
+                            <p>
+                                {{students.email}}
+                            </p>
+                            <h5>Phone No</h5>
+                            <p>
+                                {{students.phone}}
+                            </p>
+                            <h5>Student ID</h5>
+                            <p>
+                                {{students.student_id}}
+                            </p>
+                            <h5>Address</h5>
+                            <p>
+                                {{students.address}}
+                            </p>                        </div>
+                        <div class="col-md-6">
+                            <h5>Some Of The Technologies Known</h5>
+                            <a href="#" class="badge badge-dark badge-pill">html5</a>
+                            <a href="#" class="badge badge-dark badge-pill">css3</a>
+                            <a href="#" class="badge badge-dark badge-pill">Python</a>
+                            <a href="#" class="badge badge-dark badge-pill">Java</a>
+                            <a href="#" class="badge badge-dark badge-pill">bootstrap</a>
+                            <a href="#" class="badge badge-dark badge-pill">responsive-design</a>
+                            <hr>
+                            <h5>Lectures Attended</h5>
+                            <span class="badge badge-primary"><i class="fa fa-user"></i> {{present}} Attended</span>
+                            <span class="badge badge-success"><i class="fa fa-cog"></i> {{absent}} Absentees</span>
+                            <!-- <span class="badge badge-danger"><i class="fa fa-eye"></i> 245 Views</span> -->
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane" id="attendance">
+                        <table class="table table-sm">
+                            <tr>
+                                <th>Student Id</th>
+                                <th>Student Name</th>
+                                <th>Date</th>
+                                <th>Time</th>
+                            </tr>
+                            {% for attendances in attendance %}
+                                <tr>
+                                    <td>{{attendances.roll}}</td>
+                                    <td>{{attendances.name}}</td>
+                                    <td>{{attendances.date}}</td>
+                                    <td>{{attendances.time}}</td>
+                                </tr>
+                            {% endfor %}
+                        </table>
+                </div>
+                <div class="tab-pane" id="edit">
+                    <form role="form">
+                        {% for students in student %}
+                        <div class="form-group row">
+                            <label class="col-lg-3 col-form-label form-control-label">Student Name</label>
+                            <div class="col-lg-9">
+                                <input class="form-control" type="text" name="username" value="{{students.name}}">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-lg-3 col-form-label form-control-label">Student ID</label>
+                            <div class="col-lg-9">
+                                <input class="form-control-plaintext" readonly type="text" name="rollno" value="{{students.student_id}}">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-lg-3 col-form-label form-control-label">Email</label>
+                            <div class="col-lg-9">
+                                <input class="form-control" type="email" name="email" value="{{students.email}}">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-lg-3 col-form-label form-control-label">Address</label>
+                            <div class="col-lg-9">
+                                <input class="form-control" type="text" name="address" value="{{students.address}}" placeholder="">
+                            </div>
+                        </div>
+                         <div class="form-group row">
+                            <label class="col-lg-3 col-form-label form-control-label">Phone No</label>
+                            <div class="col-lg-9">
+                                <input class="form-control" type="text" name="mobileno" value="{{students.phone}}" placeholder="">
+                            </div>
+                        </div>
+                         <div class="form-group row">
+                            <label class="col-lg-3 col-form-label form-control-label">Description</label>
+                            <div class="col-lg-9">
+                                <input class="form-control" type="text" name="desc" value="{{students.description}}" placeholder="">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-lg-3 col-form-label form-control-label"></label>
+                            <div class="col-lg-9">
+                                <input type="reset" class="btn btn-secondary" value="Cancel">
+                                <input type="button" class="btn btn-primary" value="Save Changes">
+                            </div>
+                        </div>
+                        
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4 order-lg-1 text-center"> 
+            <img src="{{students.profile_pic.url}}" class="mx-auto img-fluid img-circle d-block" alt="avatar">
+            <h6 class="mt-2">Upload a different photo</h6>
+            <label class="custom-file">
+                <input type="file" id="file" class="custom-file-input">
+                <span class="custom-file-control">Choose file</span>
+            </label>
+        </div>
+    </div>
+    {% endfor %}
+<hr>
+<div class="alert alert-success" role="alert">
+    {% for message in messages %}
+        <p id="message">{{message}}</p>
+    {% endfor %}
+</div>
+</div>
+{% endblock %}

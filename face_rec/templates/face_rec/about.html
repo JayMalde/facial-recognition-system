@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Fly Text Animation</title>
+	<style type="text/css">
+		body
+		{
+			background-image:linear-gradient(rgba(0,0,0,0.9),rgba(0,0,0.4)),url(/static/images/main.jpg);
+			background-size:cover;
+			background-repeat:no-repeat;
+			background-attachment:fixed;
+			color:#fff;
+			text-align:center;
+			width:100vw;
+			font-weight:700;
+			overflow:hidden;
+			font-family:'lato',sans-serif;
+		}
+		.content
+		{
+			font-size:4em;
+			margin:40vh auto;
+			height:20vh;
+			text-transform:uppercase;
+		}
+		.content span
+		{
+			display:block;
+			font-size:0.4em;
+			opacity:0.8;
+		}
+		.content div
+		{
+			position:fixed;
+			margin:2vh 0;
+			opacity:0;
+			width:100vw;
+			animation:animate 32s linear infinite;
+		}
+		.content div:nth-child(2){animation-delay:4s;}
+		.content div:nth-child(3){animation-delay:8s;}
+		.content div:nth-child(4){animation-delay:12s;}
+		.content div:nth-child(5){animation-delay:16s;}
+		.content div:nth-child(6){animation-delay:20s;}
+		.content div:nth-child(7){animation-delay:24s;}
+		.content div:nth-child(8){animation-delay:28s;}
+		@keyframes animate
+		{
+			0%{opacity:0;filter:blur(20px);transform:scale(12);}
+			3%{opacity:1;filter:blur(0px);transform:scale(1);}
+			10%{opacity:1;filter:blur(0px);transform:scale(0.9);}
+			13%{opacity:0;filter:blur(10px);transform:scale(0.1);}
+			80%{opacity:0;}
+			100%{opacity:0;}
+		}
+	</style>
+</head>
+<body>
+	<div class="content">
+		<div><span>Thank</span>You</div>
+		<div>For<span>Exploring</span></div>
+		<div>My<span>Project</span></div>
+		<div><span>On</span>Facial Recognition<span>BASED ATTENDANCE SYSTEM</span></div>
+		<div>Made By<span>Jay Malde</span></div>
+		<div><span><p>Biometric based technologies include identification based on physiological characteristics 
+		                 (such as face, fingerprints, finger geometry, hand geometry, hand veins, palm, iris, retina, ear and voice) 
+		                 and behavioral traits (such as gait, signature and keystroke dynamics).</p></span></div>
+		<div>About<span><p>Face recognition appears to offer several advantages over other biometric methods, 
+		                  a few of which are outlined here: Almost all these technologies require some voluntary action by the user,
+		                  i.e., the user needs to place his hand on a hand-rest for fingerprinting or hand geometry detection 
+		                    and has to stand in a fixed position in front of a camera for iris or retina identification.
+		                    </p></span></div>
+		<div><span><p>	                        However, face recognition can be done passively without any explicit action or participation
+		                        on the part of the user since face images can be acquired from a distance by a camera. This
+		                        is particularly beneficial for security and surveillance purposes. Furthermore, data acquisition
+		                        in general is fraught with problems for other biometrics: techniques that rely on hands and
+		                        fingers can be rendered useless if the epidermis tissue is damaged in some way (i.e., bruised or
+		                        cracked).</p></span></div>
+	</div>
+</body>
+</html>
