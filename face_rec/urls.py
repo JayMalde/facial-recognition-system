@@ -4,7 +4,7 @@ from . import views
 # from face_rec.views import EmailAttachementView
 
 urlpatterns = [
-	path('',views.loginPage),
+	path('/',views.loginPage),
 	path('home',views.home,name="home"),
 	
 	path('register', views.registerPage, name="register"),
