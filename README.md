@@ -7,9 +7,9 @@ Link: [Video Link](https://www.youtube.com/watch?v=Hd5yLJnqSRI)
 [![Facial recognition System](thumbnail.png)](https://www.youtube.com/watch?v=Hd5yLJnqSRI "Facial Recognition System")
 
 ## Overview
-A basic facial recognition project which recognizes a student's face and saves the attendance in database and a excel file.
-It also can create a report on attendance and send or save that pdf through mail with subject and title.
-It can also be a student management software and show all students with their info and attendance with a dashboard. 
+* A basic facial recognition project which recognizes a student's face and saves the attendance in database and a excel file.
+* It also can create a report on attendance and send or save that pdf through mail with subject and title.
+* It can also be a student management software and show all students with their info and attendance with a dashboard. 
 
 ## Basic Functionality
 This project is divided into multiple parts:-
@@ -19,12 +19,12 @@ This project is divided into multiple parts:-
 4. A section where we can select the files and send it via mail with subject and title
 
 ## Technical Aspect
-Frontend
-HTML + CSS + BOOTSTRAP
-Backend
-Python ( backend programming language )
-Django (web development framework)
-OpenCV ( Computer Vision Library )
+* Frontend
+* HTML + CSS + BOOTSTRAP
+* Backend
+* Python ( backend programming language )
+* Django (web development framework)
+* OpenCV ( Computer Vision Library )
 
 ## Installation
 The Code is written in Python 3.6 If you don't have Python installed you can find it [here](https://www.python.org/downloads/). If you are using a lower version of Python you can run this or upgrade using the pip package, ensuring you have the latest version of pip. To install the required packages and libraries, run this command in the project directory after [cloning](https://www.howtogeek.com/451360/how-to-clone-a-github-repository/) the repository:-
