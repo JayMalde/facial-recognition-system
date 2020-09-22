@@ -19,9 +19,11 @@ This project is divided into multiple parts:-
 4. A section where we can select the files and send it via mail with subject and title
 
 ## Technical Aspect
-* Frontend
-* HTML + CSS + BOOTSTRAP
-* Backend
+### Frontend
+* HTML 
+* CSS 
+* BOOTSTRAP
+### Backend
 * Python ( backend programming language )
 * Django (web development framework)
 * OpenCV ( Computer Vision Library )
