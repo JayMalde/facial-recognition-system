@@ -37,6 +37,9 @@ pip install -r requirements.txt
 After cloning check that all the libraries are installed or use the .idea environment given in the repo.
 For running the same project go to the project folder where the **manage.py** file is located and run the following command into the command prompt:-
 ```bash
+python manage.py makemigrations
+python manage.py migrate
+python manage.py createsuperuser
 python manage.py runserver
 ```
 
