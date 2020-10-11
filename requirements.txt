@@ -1,7 +1,7 @@
 Django==2.2
 numpy==1.19.0
-opencv-contrib-python==4.4.0.42
-opencv-python==4.4.0.42
+opencv-contrib-python==3.4.0.12
+opencv-python==3.4.1
 pandas==1.0.3
 Pillow==5.1.0
 python-dateutil==2.8.1
