@@ -5,15 +5,15 @@ from . import views
 
 urlpatterns = [
 	path('',views.loginPage),
-	path('home',views.home,name="home"),
+	path('home/',views.home,name="home"),
 	
-	path('register', views.registerPage, name="register"),
-	path('login', views.loginPage, name="login"),   
-	path('logout', views.logoutUser,name="logout"),
+	path('register/', views.registerPage, name="register"),
+	path('login/', views.loginPage, name="login"),   
+	path('logout/', views.logoutUser,name="logout"),
 
-	path('create_dataset', views.create_dataset,name="create_dataset"),
-	path('trainer', views.trainer,name="trainer"),
-	path('detect', views.TrackImages,name="detect"),
+	path('create_dataset/', views.create_dataset,name="create_dataset"),
+	path('trainer/', views.trainer,name="trainer"),
+	path('detect/', views.TrackImages,name="detect"),
 
 	path('profile/<str:pk>/', views.profile,name="profile"),
 	path('all_students/', views.all_students,name="all_students"),
@@ -23,7 +23,7 @@ urlpatterns = [
 	path('report/',views.report,name="report"),
 	path('about/',views.about,name="about"),
 	path('send_file/',views.send_file,name="send_file"),
-	path('send',views.send,name="send"),
+	path('send/',views.send,name="send"),
 
 	path('reset_password/',auth_views.PasswordResetView.as_view(),name="reset_password"),
     path('reset_password_sent/',auth_views.PasswordResetDoneView.as_view(),name="password_reset_done"),
