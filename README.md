@@ -1,10 +1,10 @@
 # Facial Recognition System
 
 ## Presentation Video Link
-Link: [Video Link](https://www.youtube.com/watch?v=Hd5yLJnqSRI?sub_confirmation=1)
+Link: [Video Link](https://www.youtube.com/watch?v=Hd5yLJnqSRI)
 
 ## Watch A Turorial By Clicking On This Link
-[![Facial recognition System](thumbnail.png)](https://www.youtube.com/watch?v=Hd5yLJnqSRI?sub_confirmation=1 "Facial Recognition System")
+[![Facial recognition System](thumbnail.png)](https://www.youtube.com/watch?v=Hd5yLJnqSRI "Facial Recognition System")
 
 ## Overview
 * A basic facial recognition project which recognizes a student's face and saves the attendance in database and a excel file.
